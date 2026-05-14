@@ -1,0 +1,20 @@
+---
+/** Any unknown path: host serves this page; send the visitor home. */
+const home = Astro.site ? new URL('/', Astro.site).href : '/';
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="robots" content="noindex" />
+		<meta http-equiv="refresh" content="0;url=/" />
+		<title>404</title>
+		<script is:inline>
+			location.replace('/');
+		</script>
+	</head>
+	<body>
+		<p><a href="/">Ir al inicio</a></p>
+	</body>
+</html>
